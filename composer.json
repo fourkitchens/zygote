@@ -1,0 +1,53 @@
+{
+  "name": "fourkitchens/zygote",
+  "description": "Project template for Drupal 8 projects with Composer",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jeff Tomlinson",
+      "role": "Architect",
+      "email": "jeff@fourkitchens.com"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "vcs",
+      "url":  "https://github.com/fourkitchens/embryo"
+    }
+  ],
+  "require": {
+    "fourkitchens/embryo": "dev-master"
+  },
+  "require-dev": {
+  },
+  "conflict": {
+    "drupal/drupal": "*"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": "true"
+  },
+  "extra": {
+    "drupal-scaffold": {
+      "excludes": [
+        ".htaccess",
+        "robots.txt"
+      ]
+    },
+    "installer-paths": {
+      "docroot/core": ["type:drupal-core"],
+      "docroot/libraries/{$name}": ["type:drupal-library"],
+      "docroot/modules/contrib/{$name}": ["type:drupal-module"],
+      "docroot/profiles/contrib/{$name}": ["type:drupal-profile"],
+      "docroot/themes/contrib/{$name}": ["type:drupal-theme"],
+      "drush/contrib/{$name}": ["type:drupal-drush"]
+    },
+    "enable-patching": true
+  }
+}
